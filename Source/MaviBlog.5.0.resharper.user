@@ -1,0 +1,32 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Shared/f:Application.spark" caret="268" fromTop="7" />
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Home/f:Index.spark" caret="50" fromTop="1" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Shared/f:Application.spark" caret="175" fromTop="4" />
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Shared/f:Application.spark" caret="0" fromTop="0" />
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Shared/f:Application.spark" caret="268" fromTop="7" />
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Home/f:Index.spark" caret="33" fromTop="0" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+</Configuration>

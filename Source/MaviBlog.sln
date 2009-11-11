@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{00000000-0000-0000-0000-000000000000}") = "MaviBlog.Web.UI", "MaviBlog.Web.UI\MaviBlog.Web.UI.csproj", "{6B61EA66-87A5-4A41-8033-7A7B02785018}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B61EA66-87A5-4A41-8033-7A7B02785018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B61EA66-87A5-4A41-8033-7A7B02785018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B61EA66-87A5-4A41-8033-7A7B02785018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B61EA66-87A5-4A41-8033-7A7B02785018}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
