@@ -11,7 +11,9 @@ namespace MaviBlog.Web.UI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute("Default", "{controller}/{action}/{id}", new { controller = "Home", action = "Index", id = "" });
+            routes.MapRoute("single_post", "posts/{seoFriendlyName}/{action}", new { controller = "Post", action = "Individual" });
+            routes.MapRoute("recent_posts", "posts", new { controller = "Post", action = "Index" });
+            routes.MapRoute("Default", "{controller}/{action}", new { controller = "Home", action = "Index", id = "" });
 
             ViewEngines.Engines.Add(new SparkViewFactory());
         }

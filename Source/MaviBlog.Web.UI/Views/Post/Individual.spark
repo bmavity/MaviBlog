@@ -1,0 +1,7 @@
+﻿<viewdata model="MaviBlog.Web.UI.Controllers.SinglePostViewModel" />
+
+<use content="view">
+	<h1>${Model.Title}</h1>
+	<strong>${Model.Author}</strong>
+	${Model.Text}
+</use>

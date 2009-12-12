@@ -1,7 +1,5 @@
 C:\Development\OpenSource\MaviBlog\Source\MaviBlog.Web.UI\bin\MaviBlog.Web.UI.dll
 C:\Development\OpenSource\MaviBlog\Source\MaviBlog.Web.UI\bin\MaviBlog.Web.UI.pdb
-C:\Development\OpenSource\MaviBlog\Source\MaviBlog.Web.UI\bin\Spark.dll
-C:\Development\OpenSource\MaviBlog\Source\MaviBlog.Web.UI\bin\Spark.Web.Mvc2.dll
 C:\Development\OpenSource\MaviBlog\Source\MaviBlog.Web.UI\obj\Debug\ResolveAssemblyReference.cache
 C:\Development\OpenSource\MaviBlog\Source\MaviBlog.Web.UI\obj\Debug\MaviBlog.Web.UI.dll
 C:\Development\OpenSource\MaviBlog\Source\MaviBlog.Web.UI\obj\Debug\MaviBlog.Web.UI.pdb

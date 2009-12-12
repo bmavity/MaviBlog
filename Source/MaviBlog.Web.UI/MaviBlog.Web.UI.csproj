@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -88,6 +89,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <None Include="Views\Post\Index.spark" />
+    <None Include="Views\Post\Individual.spark" />
     <None Include="Views\Shared\Application.spark" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
