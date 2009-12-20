@@ -10,13 +10,13 @@ namespace MaviBlog.Web.UI.Specs
     {
         private static PostController controller;
 
-        Establish context = () => controller = null;
+        Establish context = () =>
+            controller = null;
 
-        Because of = () => controller = new PostController();
+        Because of = () =>
+            controller = new PostController();
 
         It should_not_be_null = () =>
-        {
             controller.ShouldNotBeNull();
-        };
     }
 }

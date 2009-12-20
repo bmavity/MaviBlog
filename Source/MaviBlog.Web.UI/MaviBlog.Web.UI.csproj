@@ -90,7 +90,6 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <None Include="Views\Post\Index.spark" />
-    <None Include="Views\Post\Individual.spark" />
     <None Include="Views\Shared\Application.spark" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -110,13 +109,22 @@
     <Content Include="Scripts\MicrosoftMvcAjax.js" />
     <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
     <Content Include="Scripts\MicrosoftMvcJQueryValidation.js" />
-    <None Include="Views\Home\Index.spark" />
+    <None Include="Views\Home\Index.spark">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Views\Web.config" />
+    <None Include="Views\Shared\_Post.spark" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MaviBlog\MaviBlog.csproj">
+      <Project>{3B5529E8-4600-4D4D-AAFC-63BC3AA5423F}</Project>
+      <Name>MaviBlog</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -149,7 +157,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>13104</DevelopmentServerPort>
+          <DevelopmentServerPort>61730</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

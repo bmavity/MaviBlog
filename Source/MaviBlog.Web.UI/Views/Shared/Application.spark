@@ -1,11 +1,21 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<use namespace="System" />
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+
+<html>
 <head>
-    <title></title>
+    <title>
+        <use content="title">Blog : brianmavity.com</use>
+    </title>
 </head>
 <body>
-    <h1>Application</h1>
-    <use content="view" />
+    <div id="header">
+        <a href="http://www.brianmavity.com">brianmavity.com</a>
+        <p id="tagline">Learn with me</p>
+    </div>
+    <use:content />
+    <div id="footer">
+        &copy; 2008-${DateTime.Now.Year} Brian Mavity - All rights reserved.
+    </div>
 </body>
 </html>

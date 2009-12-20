@@ -1,0 +1,5 @@
+﻿<div class="post">
+    <h1>${ post.Title }</h1>
+    <p>${ post.PublishDate } by ${ post.Author }</p>
+    <div class="content">!{ post.Content }</div>
+</div>

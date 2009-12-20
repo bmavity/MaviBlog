@@ -9,15 +9,17 @@
   <RecentFiles>
     <RecentFiles>
       <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/f:Web.config" caret="167" fromTop="5" />
-      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Controllers/f:HomeController.cs" caret="166" fromTop="6" />
       <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Post/f:Index.spark" caret="54" fromTop="1" />
-      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Shared/f:Application.spark" caret="288" fromTop="10" />
-      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Home/f:Index.spark" caret="47" fromTop="1" />
       <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/f:Global.asax.cs" caret="756" fromTop="18" />
       <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Controllers/f:PostController.cs" caret="544" fromTop="17" />
-      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Post/f:Individual.spark" caret="64" fromTop="0" />
       <File id="3B5529E8-4600-4D4D-AAFC-63BC3AA5423F/f:Blog.cs" caret="0" fromTop="0" />
-      <File id="9A32EB6F-4231-4B75-B8F0-306C0CA33F4A/f:BlogSpecs.cs" caret="409" fromTop="15" />
+      <File id="9A32EB6F-4231-4B75-B8F0-306C0CA33F4A/f:BlogSpecs.cs" caret="167" fromTop="8" />
+      <File id="B3F30085-84FF-471E-B5C1-9565788F6886/f:PostControllerSpecs.cs" caret="538" fromTop="21" />
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Controllers/f:HomeController.cs" caret="147" fromTop="5" />
+      <File id="3B5529E8-4600-4D4D-AAFC-63BC3AA5423F/f:Post.cs" caret="71" fromTop="5" />
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Shared/f:_Post.spark" caret="25" fromTop="2" />
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Shared/f:Application.spark" caret="462" fromTop="19" />
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Home/f:Index.spark" caret="130" fromTop="3" />
     </RecentFiles>
     <RecentEdits>
       <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Shared/f:Application.spark" caret="175" fromTop="4" />
@@ -28,18 +30,25 @@
       <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/f:Global.asax.cs" caret="121" fromTop="5" />
       <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/f:Global.asax.cs" caret="3344" fromTop="12" />
       <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Controllers/f:HomeController.cs" caret="118" fromTop="4" />
-      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Controllers/f:HomeController.cs" caret="205" fromTop="8" />
       <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/f:Global.asax.cs" caret="679" fromTop="15" />
       <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Post/f:Index.spark" caret="41" fromTop="0" />
       <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Controllers/f:PostController.cs" caret="619" fromTop="10" />
       <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Controllers/f:PostController.cs" caret="669" fromTop="20" />
-      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Home/f:Index.spark" caret="0" fromTop="0" />
       <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Controllers/f:PostController.cs" caret="543" fromTop="17" />
       <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Controllers/f:PostController.cs" caret="282" fromTop="11" />
       <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/f:Global.asax.cs" caret="387" fromTop="12" />
-      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Post/f:Individual.spark" caret="64" fromTop="0" />
       <File id="3B5529E8-4600-4D4D-AAFC-63BC3AA5423F/f:Blog.cs" caret="0" fromTop="0" />
       <File id="9A32EB6F-4231-4B75-B8F0-306C0CA33F4A/f:BlogSpecs.cs" caret="392" fromTop="15" />
+      <File id="B3F30085-84FF-471E-B5C1-9565788F6886/f:PostControllerSpecs.cs" caret="257" fromTop="5" />
+      <File id="B3F30085-84FF-471E-B5C1-9565788F6886/f:PostControllerSpecs.cs" caret="395" fromTop="13" />
+      <File id="B3F30085-84FF-471E-B5C1-9565788F6886/f:PostControllerSpecs.cs" caret="514" fromTop="17" />
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Controllers/f:HomeController.cs" caret="147" fromTop="5" />
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Shared/f:_Post.spark" caret="2896" fromTop="19" />
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Shared/f:_Post.spark" caret="25" fromTop="2" />
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Home/f:Index.spark" caret="0" fromTop="0" />
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Home/f:Index.spark" caret="0" fromTop="0" />
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Home/f:Index.spark" caret="0" fromTop="0" />
+      <File id="6B61EA66-87A5-4A41-8033-7A7B02785018/d:Views/d:Home/f:Index.spark" caret="130" fromTop="3" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -56,7 +65,7 @@
   <CompletionStatisticsManager>
     <ItemStatistics item="Default">
       <Item value="routes" priority="0" />
-      <Item value="public" priority="2" />
+      <Item value="public" priority="3" />
       <Item value="ActionResult" priority="1" />
       <Item value="return" priority="1" />
       <Item value="ViewContext" priority="0" />
@@ -64,9 +73,9 @@
       <Item value="ViewResult" priority="0" />
       <Item value="string" priority="0" />
       <Item value="name" priority="0" />
-      <Item value="class" priority="0" />
-      <Item value="Subject" priority="0" />
-      <Item value="typeof" priority="0" />
+      <Item value="class" priority="1" />
+      <Item value="Subject" priority="1" />
+      <Item value="typeof" priority="1" />
       <Item value="Blog" priority="2" />
       <Item value="Establish" priority="0" />
       <Item value="new" priority="1" />
@@ -74,6 +83,10 @@
       <Item value="Because" priority="0" />
       <Item value="newBlog" priority="1" />
       <Item value="It" priority="0" />
+      <Item value="PostController" priority="2" />
+      <Item value="Controller" priority="0" />
+      <Item value="controller" priority="2" />
+      <Item value="TagBuilder`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Web.Routing.RouteCollection">
       <Item value="MapPageRoute" priority="0" />

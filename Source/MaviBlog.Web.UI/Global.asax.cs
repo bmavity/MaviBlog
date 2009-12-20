@@ -1,6 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Spark;
 using Spark.Web.Mvc;
 
 namespace MaviBlog.Web.UI
@@ -15,7 +16,10 @@ namespace MaviBlog.Web.UI
             routes.MapRoute("recent_posts", "posts", new { controller = "Post", action = "Index" });
             routes.MapRoute("Default", "{controller}/{action}", new { controller = "Home", action = "Index", id = "" });
 
-            ViewEngines.Engines.Add(new SparkViewFactory());
+            ViewEngines.Engines.Add(new SparkViewFactory(
+                new SparkSettings{
+                    AutomaticEncoding = true
+                }));
         }
 
         protected void Application_Start()

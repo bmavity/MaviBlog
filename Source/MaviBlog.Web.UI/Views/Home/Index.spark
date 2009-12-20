@@ -1,3 +1,8 @@
-﻿<use content="view">
-	<h2>Content</h2>
-</use>
+﻿<use namespace="System.Collections.Generic" />
+<viewdata Posts="IEnumerable[[MaviBlog.Post]]" />
+
+<content name="content">
+    <for each="var post in Posts">
+	    <Post />
+    </for>
+</content>
