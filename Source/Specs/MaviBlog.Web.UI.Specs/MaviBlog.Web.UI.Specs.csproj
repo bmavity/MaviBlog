@@ -31,8 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\..\Libraries\AutoMapper\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Machine.Specifications">
       <HintPath>..\..\..\Tools\MSpec\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\..\Tools\RhinoMocks\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,6 +61,10 @@
     <ProjectReference Include="..\..\MaviBlog.Web.UI\MaviBlog.Web.UI.csproj">
       <Project>{6B61EA66-87A5-4A41-8033-7A7B02785018}</Project>
       <Name>MaviBlog.Web.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MaviBlog\MaviBlog.csproj">
+      <Project>{3B5529E8-4600-4D4D-AAFC-63BC3AA5423F}</Project>
+      <Name>MaviBlog</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

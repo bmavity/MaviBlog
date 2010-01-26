@@ -1,10 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
+using AutoMapper;
 
 namespace MaviBlog.Web.UI.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IPostRepository _repository;
+        private readonly IMappingEngine _mapper;
+
+        public HomeController(IPostRepository repository, IMappingEngine mapper)
+        {
+            _repository = repository;
+            _mapper = mapper;
+        }
+
         public ActionResult Index()
         {
             ViewData["Posts"] = new List<Post>

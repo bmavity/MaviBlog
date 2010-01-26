@@ -39,6 +39,9 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\Libraries\AutoMapper\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Spark">
       <HintPath>..\..\References\Spark\Spark.dll</HintPath>
     </Reference>
