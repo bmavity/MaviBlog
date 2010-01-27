@@ -1,5 +1,5 @@
 ﻿using Machine.Specifications;
-using MaviBlog.Web.UI.Controllers;
+using MaviBlog.Web.UI.Controllers.Post;
 
 namespace MaviBlog.Web.UI.Specs
 {

@@ -1,8 +1,7 @@
 ﻿<use namespace="System.Collections.Generic" />
-<viewdata Posts="IEnumerable[[MaviBlog.Post]]" />
 
 <content name="content">
-    <for each="var post in Posts">
+    <for each="var post in Model.Posts">
 	    <Post />
     </for>
 </content>
