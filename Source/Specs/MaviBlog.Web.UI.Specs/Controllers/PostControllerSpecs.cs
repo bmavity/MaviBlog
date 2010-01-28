@@ -5,7 +5,7 @@ namespace MaviBlog.Web.UI.Specs
 {
     public class PostControllerSpecs{}
 
-    [Subject(typeof(PostController))]
+    [Subject(typeof(PostController)), Tags("developer", "display post")]
     public class post_controller_when_handling_request
     {
         private static PostController controller;
