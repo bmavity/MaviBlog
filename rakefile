@@ -9,7 +9,11 @@ namespace :build do
 	desc "Starting build"
 	msbuild :msbuild do |msb|
 		msb.path_to_command = "C:/Windows/Microsoft.NET/Framework/v4.0.21006/MSBuild.exe"
-		msb.properties = {:configuration => :Debug}
+		msb.properties = {
+			:Configuration => :Debug,
+			:OutputPath => :"C:/Development/OpenSource/MaviBlog/Build",
+			:WebProjectOutputDir => :"C:/Development/OpenSource/MaviBlog/Build/Dist",
+		}
 		msb.targets [:Clean, :Build]
 		msb.solution = "Source/MaviBlog.sln"
 	end
@@ -18,8 +22,11 @@ namespace :build do
 	mspec do |mspec|
 		mspec.path_to_command = "Tools/MSpec/MSpec.exe"
 		mspec.assemblies(
-			"Source/Specs/MaviBlog.Web.Ui.Specs/bin/Debug/MaviBlog.Web.Ui.Specs.dll",
-			"Source/Specs/MaviBlog.Specs/bin/Debug/MaviBlog.Specs.dll"
+			"Build/MaviBlog.Web.Ui.Specs.dll",
+			"Build/MaviBlog.Specs.dll"
+		)
+		mspec.options(
+			"--html Build/MSpecResults.html"
 		)
 	end
 end
