@@ -17,7 +17,9 @@ namespace :build do
 	desc "Running specs"
 	mspec do |mspec|
 		mspec.path_to_command = "Tools/MSpec/MSpec.exe"
-		mspec.assemblies << "Source/Specs/MaviBlog.Web.Ui.Specs/bin/Debug/MaviBlog.Web.Ui.Specs.dll" 
-		mspec.assemblies << "Source/Specs/MaviBlog.Specs/bin/Debug/MaviBlog.Specs.dll"
+		mspec.assemblies(
+			"Source/Specs/MaviBlog.Web.Ui.Specs/bin/Debug/MaviBlog.Web.Ui.Specs.dll",
+			"Source/Specs/MaviBlog.Specs/bin/Debug/MaviBlog.Specs.dll"
+		)
 	end
 end
