@@ -3,6 +3,8 @@ using System.Web.Mvc;
 using AutoMapper;
 using Machine.Specifications;
 using MaviBlog.Web.UI.Controllers;
+using MaviBlog.Web.UI.Controllers.Home;
+using MaviBlog.Web.UI.Controllers.Post;
 using Rhino.Mocks;
 
 namespace MaviBlog.Web.UI.Specs
@@ -13,7 +15,7 @@ namespace MaviBlog.Web.UI.Specs
     public class home_controller_when_handling_request
     {
         private static HomeController controller;
-        private static IEnumerable<SinglePostViewModel> result;
+        private static IEnumerable<Post> result;
 
         Establish context = () =>
         {
@@ -24,7 +26,7 @@ namespace MaviBlog.Web.UI.Specs
         };
 
         Because of = () =>
-            result = controller.Index().Model as IEnumerable<SinglePostViewModel>;
+            result = controller.Index().Posts;
 
         It should_properly_handle_the_request = () =>
         {

@@ -1,23 +1,20 @@
-using System;
-using System.Web.Mvc;
-
-namespace MaviBlog.Web.UI.Controllers
+namespace MaviBlog.Web.UI.Controllers.Post
 {
-    public class PostController : Controller
+    public class PostController
     {
-        public ActionResult Index()
+        public SinglePostViewModel Index()
         {
-            return View();
+            return new SinglePostViewModel();
         }
 
-        public ActionResult Individual(string seoFriendlyName)
+        public SinglePostViewModel Individual(string seoFriendlyName)
         {
-            return View(new SinglePostViewModel
+            return new SinglePostViewModel
             {
                 Author = "Brian Mavity",
                 Text = "<p>This is the first paragraph.</p><p>This is the second paragraph.</p>",
                 Title = seoFriendlyName,
-            });
+            };
         }
     }
 

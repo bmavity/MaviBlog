@@ -1,30 +1,58 @@
-﻿using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
-using Spark;
-using Spark.Web.Mvc;
+﻿using AutoMapper;
+using FubuMVC.Core;
+using FubuMVC.StructureMap.Bootstrap;
+using FubuMVC.View.Spark;
+using StructureMap;
+using StructureMap.Configuration.DSL;
 
 namespace MaviBlog.Web.UI
 {
-    public class MvcApplication : HttpApplication
+    public class Global : FubuStructureMapApplication
     {
-        public static void RegisterRoutes(RouteCollection routes)
+        public override FubuRegistry GetMyRegistry()
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-            routes.MapRoute("single_post", "posts/{seoFriendlyName}/{action}", new { controller = "Post", action = "Individual" });
-            routes.MapRoute("recent_posts", "posts", new { controller = "Post", action = "Index" });
-            routes.MapRoute("Default", "{controller}/{action}", new { controller = "Home", action = "Index", id = "" });
-
-            ViewEngines.Engines.Add(new SparkViewFactory(
-                new SparkSettings{
-                    AutomaticEncoding = true
-                }));
+            return new MaviBlogUiFubuRegistry();
         }
 
-        protected void Application_Start()
+        public override void InitializeStructureMap(IInitializationExpression init)
         {
-            RegisterRoutes(RouteTable.Routes);
+            init.AddRegistry<CoreStructureMapRegistry>();
+
+            init.AddRegistry<AutoMapperStructureMapRegistry>();
+        }
+    }
+
+    public class AutoMapperStructureMapRegistry : Registry
+    {
+        public AutoMapperStructureMapRegistry()
+        {
+            For<IMappingEngine>().Use(Mapper.Engine);
+        }
+    }
+
+    public class MaviBlogUiFubuRegistry : FubuRegistry
+    {
+        public MaviBlogUiFubuRegistry()
+        {
+            IncludeDiagnostics(true);
+
+            Applies.ToThisAssembly();
+
+            Actions
+                .IncludeTypesNamed(x => x.EndsWith("Controller"));
+
+            Routes
+                .IgnoreControllerNamespaceEntirely()
+                .IgnoreMethodsNamed("index");
+
+            Views
+                .TryToAttach(x =>
+                {
+                    x.to_spark_view_by_action_namespace_and_name(GetType().Namespace);
+                    x.by_ViewModel_and_Namespace_and_MethodName();
+                    x.by_ViewModel_and_Namespace();
+                    x.by_ViewModel();
+                });
         }
     }
 }

@@ -7,7 +7,7 @@ namespace :build do
 	task :sample => ['build:msbuild', 'build:mspec']
 
 	desc "Starting build"
-	msbuildtask :msbuild do |msb|
+	msbuild :msbuild do |msb|
 		msb.path_to_command = "C:/Windows/Microsoft.NET/Framework/v4.0.21006/MSBuild.exe"
 		msb.properties = {:configuration => :Debug}
 		msb.targets [:Clean, :Build]
@@ -15,7 +15,7 @@ namespace :build do
 	end
 	
 	desc "Running specs"
-	mspectask do |mspec|
+	mspec do |mspec|
 		mspec.path_to_command = "Tools/MSpec/MSpec.exe"
 		mspec.assemblies << "Source/Specs/MaviBlog.Web.Ui.Specs/bin/Debug/MaviBlog.Web.Ui.Specs.dll" 
 		mspec.assemblies << "Source/Specs/MaviBlog.Specs/bin/Debug/MaviBlog.Specs.dll"

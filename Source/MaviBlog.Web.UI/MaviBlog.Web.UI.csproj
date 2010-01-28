@@ -42,11 +42,17 @@
     <Reference Include="AutoMapper">
       <HintPath>..\..\Libraries\AutoMapper\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Spark">
-      <HintPath>..\..\References\Spark\Spark.dll</HintPath>
+    <Reference Include="FubuMVC.Core">
+      <HintPath>..\..\Libraries\FubuMvc\FubuMVC.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Spark.Web.Mvc2">
-      <HintPath>..\..\References\Spark\Spark.Web.Mvc2.dll</HintPath>
+    <Reference Include="FubuMVC.StructureMap">
+      <HintPath>..\..\Libraries\FubuMvc\FubuMVC.StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.View.Spark">
+      <HintPath>..\..\Libraries\FubuMvc\FubuMVC.View.Spark.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\Libraries\StructureMap\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -83,8 +89,8 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PostController.cs" />
+    <Compile Include="Controllers\Home\HomeController.cs" />
+    <Compile Include="Controllers\Post\PostController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -92,8 +98,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <None Include="Views\Post\Index.spark" />
-    <None Include="Views\Shared\Application.spark" />
+    <None Include="Controllers\Post\Index.spark" />
+    <None Include="Controllers\Shared\Application.spark" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -101,27 +107,13 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Scripts\jquery-1.3.2.js" />
-    <Content Include="Scripts\jquery-1.3.2.min.js" />
-    <Content Include="Scripts\jquery-1.3.2-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\MicrosoftAjax.js" />
-    <Content Include="Scripts\MicrosoftAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcJQueryValidation.js" />
-    <None Include="Views\Home\Index.spark">
+    <None Include="Controllers\Home\Index.spark">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\Web.config" />
-    <None Include="Views\Shared\_Post.spark" />
+    <None Include="Controllers\Shared\_Post.spark" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MaviBlog\MaviBlog.csproj">
