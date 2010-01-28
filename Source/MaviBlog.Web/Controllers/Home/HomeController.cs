@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using AutoMapper;
 
-namespace MaviBlog.Web.UI.Controllers.Home
+namespace MaviBlog.Web.Controllers.Home
 {
     public class HomeController
     {

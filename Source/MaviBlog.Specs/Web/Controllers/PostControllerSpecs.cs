@@ -1,7 +1,7 @@
 ﻿using Machine.Specifications;
-using MaviBlog.Web.UI.Controllers.Post;
+using MaviBlog.Web.Controllers.Post;
 
-namespace MaviBlog.Web.UI.Specs
+namespace MaviBlog.Specs.Web.Controllers
 {
     public class PostControllerSpecs{}
 

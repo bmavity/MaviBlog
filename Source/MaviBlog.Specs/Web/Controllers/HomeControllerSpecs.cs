@@ -1,13 +1,10 @@
 using System.Collections.Generic;
-using System.Web.Mvc;
 using AutoMapper;
 using Machine.Specifications;
-using MaviBlog.Web.UI.Controllers;
-using MaviBlog.Web.UI.Controllers.Home;
-using MaviBlog.Web.UI.Controllers.Post;
+using MaviBlog.Web.Controllers.Home;
 using Rhino.Mocks;
 
-namespace MaviBlog.Web.UI.Specs
+namespace MaviBlog.Specs.Web.Controllers
 {
     public class HomeControllerSpecs {}
 
@@ -15,7 +12,7 @@ namespace MaviBlog.Web.UI.Specs
     public class home_controller_when_handling_request
     {
         private static HomeController controller;
-        private static IEnumerable<Post> result;
+        private static IEnumerable<MaviBlog.Post> result;
 
         Establish context = () =>
         {

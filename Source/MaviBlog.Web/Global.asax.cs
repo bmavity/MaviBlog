@@ -5,7 +5,7 @@ using FubuMVC.View.Spark;
 using StructureMap;
 using StructureMap.Configuration.DSL;
 
-namespace MaviBlog.Web.UI
+namespace MaviBlog.Web
 {
     public class Global : FubuStructureMapApplication
     {

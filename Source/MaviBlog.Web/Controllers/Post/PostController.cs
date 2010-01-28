@@ -1,4 +1,4 @@
-namespace MaviBlog.Web.UI.Controllers.Post
+namespace MaviBlog.Web.Controllers.Post
 {
     public class PostController
     {

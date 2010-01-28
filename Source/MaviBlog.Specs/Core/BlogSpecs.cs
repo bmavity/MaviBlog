@@ -1,6 +1,6 @@
 ﻿using Machine.Specifications;
 
-namespace MaviBlog.Specs
+namespace MaviBlog.Specs.Core
 {
     public class BlogSpecs{}
 
