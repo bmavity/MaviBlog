@@ -9,7 +9,7 @@ namespace MaviBlog.Specs.Web.Controllers
     public class HomeControllerSpecs {}
 
     [Subject(typeof(HomeController))]
-    public class home_page_when_showing_default_display
+    public class when_executing_index_action
     {
         private static HomeController controller;
         private static HomeViewModel viewModel;
@@ -31,9 +31,7 @@ namespace MaviBlog.Specs.Web.Controllers
         Because of = () =>
             viewModel = controller.Index();
 
-        It should_display_recent_posts = () =>
-        {
+        It should_include_recent_posts = () =>
             viewModel.Posts.ShouldBeTheSameAs(posts);
-        };
     }
 }
