@@ -1,3 +1,5 @@
-﻿<content:view>
-	<h2>Multiple Posts</h2>
-</content:view>
+﻿<content:content>
+	<h1>${ Model.Title }</h1>
+    <var post="Model" />
+    <Post />
+</content:content>
