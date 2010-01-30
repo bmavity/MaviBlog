@@ -1,6 +1,6 @@
 ﻿namespace MaviBlog.Web.Controllers.Post
 {
-    public class PostInputModel
+    public class PostIndexInputModel
     {
         public string UrlFormattedPostTitle { get; set; }
     }

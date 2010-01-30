@@ -36,4 +36,33 @@ namespace MaviBlog.Specs.Web.Controllers
         It should_return_post = () =>
             viewModel.ShouldBeTheSameAs(post);
     }
+
+    [Subject(typeof(PostController)), Tags("developer", "create post")]
+    public class when_executing_create_action
+    {
+        private static PostController controller;
+        private static PostCreateResult result;
+        private static Post createdPost;
+
+        Establish context = () =>
+        {
+            var mocker = new RhinoAutoMocker<PostController>();
+
+            mocker.Get<IPostRepository>()
+                .Stub(x => x.Save(null))
+                .IgnoreArguments()
+                .Return(1);
+
+            controller = mocker.ClassUnderTest;
+        };
+
+        Because of = () =>
+            result = controller.Create(new PostCreateInputModel
+            {
+                Content = "<p>Hello World</p>",
+            });
+
+        It should_return_the_new_post_id = () =>
+            result.Id.ShouldEqual(1);
+    }
 }

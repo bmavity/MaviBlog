@@ -78,6 +78,8 @@
   <ItemGroup>
     <Compile Include="Controllers\Home\HomeViewModel.cs" />
     <Compile Include="Controllers\Post\PostController.cs" />
+    <Compile Include="Controllers\Post\PostCreateInputModel.cs" />
+    <Compile Include="Controllers\Post\PostCreateResult.cs" />
     <Compile Include="Controllers\Post\PostIndexInputModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

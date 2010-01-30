@@ -16,6 +16,11 @@ namespace MaviBlog
             return _posts.ElementAt(0);
         }
 
+        public long Save(Post postToCreate)
+        {
+            throw new NotImplementedException();
+        }
+
         private static IEnumerable<PostViewModel> _posts = new[]
                        {
                            new PostViewModel

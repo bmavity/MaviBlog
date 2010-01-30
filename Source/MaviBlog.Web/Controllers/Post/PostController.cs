@@ -16,5 +16,14 @@ namespace MaviBlog.Web.Controllers.Post
         {
             return _repository.GetPostByUrlEncodedTitle(inputModel.UrlFormattedPostTitle);
         }
+
+        public PostCreateResult Create(PostCreateInputModel inputModel)
+        {
+            var postId = _repository.Save(new MaviBlog.Post());
+            return new PostCreateResult
+            {
+                Id = postId,
+            };
+        }
     }
 }

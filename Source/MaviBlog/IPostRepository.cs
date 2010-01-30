@@ -6,5 +6,6 @@ namespace MaviBlog
     {
         IEnumerable<PostViewModel> GetLatestPosts();
         PostViewModel GetPostByUrlEncodedTitle(string urlEncodedPostTitle);
+        long Save(Post postToCreate);
     }
 }
