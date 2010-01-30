@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MaviBlog
 {
@@ -7,7 +8,15 @@ namespace MaviBlog
     {
         public IEnumerable<PostViewModel> GetLatestPosts()
         {
-            return new[]
+            return _posts;
+        }
+
+        public PostViewModel GetPostByUrlEncodedTitle(string urlEncodedPostTitle)
+        {
+            return _posts.ElementAt(0);
+        }
+
+        private static IEnumerable<PostViewModel> _posts = new[]
                        {
                            new PostViewModel
                                {
@@ -36,12 +45,5 @@ namespace MaviBlog
                                    Title = "Second!",
                                },
                        };
-
-        }
-
-        public PostViewModel GetPostByUrlEncodedTitle(string testPostName)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

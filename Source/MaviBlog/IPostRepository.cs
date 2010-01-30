@@ -5,6 +5,6 @@ namespace MaviBlog
     public interface IPostRepository
     {
         IEnumerable<PostViewModel> GetLatestPosts();
-        PostViewModel GetPostByUrlEncodedTitle(string testPostName);
+        PostViewModel GetPostByUrlEncodedTitle(string urlEncodedPostTitle);
     }
 }
