@@ -12,7 +12,7 @@ namespace MaviBlog.Web.Controllers.Post
         }
 
         [UrlPattern("post/{UrlFormattedPostTitle}")]
-        public PostViewModel Index(PostInputModel inputModel)
+        public PostViewModel Index(PostIndexInputModel inputModel)
         {
             return _repository.GetPostByUrlEncodedTitle(inputModel.UrlFormattedPostTitle);
         }

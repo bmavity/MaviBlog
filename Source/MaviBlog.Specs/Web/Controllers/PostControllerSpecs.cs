@@ -28,7 +28,7 @@ namespace MaviBlog.Specs.Web.Controllers
         };
 
         Because of = () =>
-            viewModel = controller.Index(new PostInputModel
+            viewModel = controller.Index(new PostIndexInputModel
             {
                 UrlFormattedPostTitle = "test-post_name",
             });
