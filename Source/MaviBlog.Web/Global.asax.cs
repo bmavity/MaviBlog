@@ -2,6 +2,7 @@
 using FubuMVC.Core;
 using FubuMVC.StructureMap.Bootstrap;
 using FubuMVC.View.Spark;
+using MaviBlog.Web.Controllers.Home;
 using StructureMap;
 using StructureMap.Configuration.DSL;
 
@@ -53,6 +54,8 @@ namespace MaviBlog.Web
                     x.by_ViewModel_and_Namespace();
                     x.by_ViewModel();
                 });
+
+            HomeIs<HomeController>(x => x.Index());
         }
     }
 }

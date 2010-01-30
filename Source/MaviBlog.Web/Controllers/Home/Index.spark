@@ -2,6 +2,7 @@
 
 <content name="content">
     <for each="var post in Model.Posts">
+        <h2>${ post.Title }</h2>
 	    <Post />
     </for>
 </content>

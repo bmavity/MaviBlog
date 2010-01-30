@@ -1,27 +1,20 @@
+using FubuMVC.Core;
+
 namespace MaviBlog.Web.Controllers.Post
 {
     public class PostController
     {
-        public SinglePostViewModel Index()
+        private readonly IPostRepository _repository;
+
+        public PostController(IPostRepository repository)
         {
-            return new SinglePostViewModel();
+            _repository = repository;
         }
 
-        public SinglePostViewModel Individual(string seoFriendlyName)
+        [UrlPattern("post/{UrlFormattedPostTitle}")]
+        public PostViewModel Index(PostInputModel inputModel)
         {
-            return new SinglePostViewModel
-            {
-                Author = "Brian Mavity",
-                Text = "<p>This is the first paragraph.</p><p>This is the second paragraph.</p>",
-                Title = seoFriendlyName,
-            };
+            return _repository.GetPostByUrlEncodedTitle(inputModel.UrlFormattedPostTitle);
         }
-    }
-
-    public class SinglePostViewModel
-    {
-        public string Title { get; set; }
-        public string Author { get; set; }
-        public string Text { get; set; }
     }
 }

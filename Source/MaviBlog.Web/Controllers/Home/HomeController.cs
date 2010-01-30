@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace MaviBlog.Web.Controllers.Home
+﻿namespace MaviBlog.Web.Controllers.Home
 {
     public class HomeController
     {
@@ -18,10 +16,5 @@ namespace MaviBlog.Web.Controllers.Home
                 Posts = _repository.GetLatestPosts(),
             };
         }
-    }
-
-    public class HomeViewModel
-    {
-        public IEnumerable<PostViewModel> Posts { get; set; }
     }
 }

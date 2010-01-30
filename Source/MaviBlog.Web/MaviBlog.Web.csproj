@@ -76,7 +76,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Home\HomeViewModel.cs" />
     <Compile Include="Controllers\Post\PostController.cs" />
+    <Compile Include="Controllers\Post\PostInputModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
