@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Collections.Generic;
+using AutoMapper;
 using FubuMVC.Core;
 using FubuMVC.StructureMap.Bootstrap;
 using FubuMVC.View.Spark;
@@ -42,9 +44,15 @@ namespace MaviBlog.Web
             Actions
                 .IncludeTypesNamed(x => x.EndsWith("Controller"));
 
+            new HashSet<string>(StringComparer.InvariantCultureIgnoreCase) { "GET", "POST", "PUT", "HEAD" }
+                .Each(verb =>
+                    Routes.ConstrainToHttpMethod(action => action.Method.Name.Equals(verb, StringComparison.InvariantCultureIgnoreCase),
+                    verb));
+
             Routes
                 .IgnoreControllerNamespaceEntirely()
-                .IgnoreMethodsNamed("index");
+                .IgnoreMethodsNamed("get")
+                .IgnoreMethodsNamed("post");
 
             Views
                 .TryToAttach(x =>

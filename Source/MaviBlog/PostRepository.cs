@@ -18,7 +18,7 @@ namespace MaviBlog
 
         public long Save(Post postToCreate)
         {
-            throw new NotImplementedException();
+            return 1;
         }
 
         private static IEnumerable<PostViewModel> _posts = new[]

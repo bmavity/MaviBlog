@@ -11,13 +11,13 @@ namespace MaviBlog.Web.Controllers.Post
             _repository = repository;
         }
 
-        [UrlPattern("post/{UrlFormattedPostTitle}")]
-        public PostViewModel Index(PostIndexInputModel inputModel)
+        public PostViewModel Get(PostIndexInputModel inputModel)
         {
             return _repository.GetPostByUrlEncodedTitle(inputModel.UrlFormattedPostTitle);
         }
 
-        public PostCreateResult Create(PostCreateInputModel inputModel)
+        [JsonEndpoint]
+        public PostCreateResult Post(PostCreateInputModel inputModel)
         {
             var postId = _repository.Save(new MaviBlog.Post());
             return new PostCreateResult

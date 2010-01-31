@@ -8,7 +8,7 @@ namespace MaviBlog.Specs.Web.Controllers
     public class PostControllerSpecs{}
 
     [Subject(typeof(PostController)), Tags("developer", "display post")]
-    public class when_executing_index_action_with_a_post_title_specified
+    public class when_executing_get_action_with_a_post_title_specified
     {
         private static PostViewModel post;
         private static PostController controller;
@@ -28,7 +28,7 @@ namespace MaviBlog.Specs.Web.Controllers
         };
 
         Because of = () =>
-            viewModel = controller.Index(new PostIndexInputModel
+            viewModel = controller.Get(new PostIndexInputModel
             {
                 UrlFormattedPostTitle = "test-post_name",
             });
@@ -38,7 +38,7 @@ namespace MaviBlog.Specs.Web.Controllers
     }
 
     [Subject(typeof(PostController)), Tags("developer", "create post")]
-    public class when_executing_create_action
+    public class when_executing_post_action
     {
         private static PostController controller;
         private static PostCreateResult result;
@@ -57,7 +57,7 @@ namespace MaviBlog.Specs.Web.Controllers
         };
 
         Because of = () =>
-            result = controller.Create(new PostCreateInputModel
+            result = controller.Post(new PostCreateInputModel
             {
                 Content = "<p>Hello World</p>",
             });

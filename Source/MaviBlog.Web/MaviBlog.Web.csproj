@@ -98,7 +98,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Controllers\Layouts\Application.spark" />
-    <None Include="Controllers\Post\Index.spark" />
+    <None Include="Controllers\Post\Get.spark" />
     <None Include="Controllers\Shared\_Post.spark" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
