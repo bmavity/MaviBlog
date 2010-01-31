@@ -1,4 +1,4 @@
-namespace MaviBlog
+namespace MaviBlog.Specs.Integration
 {
     public class InMemoryUrlEncodedTitleRepository : IUrlEncodedTitleRepository
     {

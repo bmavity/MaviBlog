@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace MaviBlog
+namespace MaviBlog.Specs.Integration
 {
     public class InMemoryPostRepository : IPostRepository
     {

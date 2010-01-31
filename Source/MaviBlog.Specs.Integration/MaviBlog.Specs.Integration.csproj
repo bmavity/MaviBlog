@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InMemoryPostRepository.cs" />
+    <Compile Include="InMemoryUrlEncodedTitleRepository.cs" />
     <Compile Include="PostCreationSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

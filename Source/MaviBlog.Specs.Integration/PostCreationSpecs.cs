@@ -39,6 +39,9 @@ namespace MaviBlog.Specs.Integration
             var container = new Container(init =>
             {
                 init.AddRegistry<CoreStructureMapRegistry>();
+
+                init.For<IPostRepository>().Use<InMemoryPostRepository>();
+                init.For<IUrlEncodedTitleRepository>().Use<InMemoryUrlEncodedTitleRepository>();
             });
             controller = container.GetInstance<PostController>();
 
