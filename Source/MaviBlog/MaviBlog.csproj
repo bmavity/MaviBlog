@@ -45,7 +45,10 @@
   <ItemGroup>
     <Compile Include="Blog.cs" />
     <Compile Include="CoreStructureMapRegistry.cs" />
+    <Compile Include="FileSystemPostRepository.cs" />
+    <Compile Include="FileSystemUrlEncodedTitleRepository.cs" />
     <Compile Include="IPostRepository.cs" />
+    <Compile Include="ITitleUrlEncoder.cs" />
     <Compile Include="IUrlEncodedTitleRepository.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="PostViewModel.cs" />

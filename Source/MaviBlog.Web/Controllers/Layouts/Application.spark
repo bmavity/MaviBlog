@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>
-        <use content="title">Blog : brianmavity.com</use>
+        <use content="title"><script type="text/javascript">alert('hi');</script> Blog : brianmavity.com</use>
     </title>
 </head>
 <body>

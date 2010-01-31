@@ -49,15 +49,20 @@ namespace MaviBlog.Specs.Web.Controllers
         private static PostController controller;
         private static PostCreateResult result;
         private static Post createdPost;
+        private static RhinoAutoMocker<PostController> mocker;
 
         Establish context = () =>
         {
-            var mocker = new RhinoAutoMocker<PostController>();
+            mocker = new RhinoAutoMocker<PostController>();
 
             mocker.Get<IPostRepository>()
                 .Stub(x => x.Save(null))
                 .IgnoreArguments()
                 .Return(1);
+
+            mocker.Get<ITitleUrlEncoder>()
+                .Stub(x => x.EncodeTitle("hi 2 u"))
+                .Return("hi-2-u");
 
             controller = mocker.ClassUnderTest;
         };
@@ -65,10 +70,14 @@ namespace MaviBlog.Specs.Web.Controllers
         Because of = () =>
             result = controller.Post(new PostCreateInputModel
             {
-                Content = "<p>Hello World</p>",
+                Title = "hi 2 u",
             });
 
         It should_return_the_new_post_id = () =>
             result.Id.ShouldEqual(1);
+
+        It should_map_the_new_post_id_to_the_url_endcoded_title = () =>
+            mocker.Get<IUrlEncodedTitleRepository>()
+                .AssertWasCalled(x => x.SaveUrlToPostIdMap("hi-2-u", 1));
     }
 }

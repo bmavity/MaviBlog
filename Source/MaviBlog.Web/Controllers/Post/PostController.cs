@@ -5,11 +5,13 @@ namespace MaviBlog.Web.Controllers.Post
     public class PostController
     {
         private readonly IPostRepository _postRepository;
+        private readonly ITitleUrlEncoder _encoder;
         private readonly IUrlEncodedTitleRepository _titleRepository;
 
-        public PostController(IPostRepository postRepository, IUrlEncodedTitleRepository titleRepository)
+        public PostController(IPostRepository postRepository, ITitleUrlEncoder encoder, IUrlEncodedTitleRepository titleRepository)
         {
             _postRepository = postRepository;
+            _encoder = encoder;
             _titleRepository = titleRepository;
         }
 
@@ -29,6 +31,8 @@ namespace MaviBlog.Web.Controllers.Post
                                                       PublishDate = inputModel.PublishDate,
                                                       Title = inputModel.Title,
                                                   });
+            var encodedTitle = _encoder.EncodeTitle(inputModel.Title);
+            _titleRepository.SaveUrlToPostIdMap(encodedTitle, postId);
             return new PostCreateResult
             {
                 Id = postId,
