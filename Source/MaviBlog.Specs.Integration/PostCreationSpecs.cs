@@ -1,5 +1,4 @@
 ﻿using Machine.Specifications;
-using Machine.Specifications.Model;
 using MaviBlog.Web.Controllers.Post;
 using StructureMap;
 
@@ -8,18 +7,21 @@ namespace MaviBlog.Specs.Integration
     public class PostCreationSpecs {}
 
     [Subject("Post creation")]
-    public class when_displaying_a_recently_created_post : full_app_setup
+    public class when_displaying_a_created_post : full_app_setup
     {
         private static PostViewModel post;
 
         Because of = () =>
             post = controller.Get(new PostIndexInputModel
             {
-                UrlFormattedPostTitle = "hi-2-u",
+                UrlFormattedPostTitle = "fires-of-heaven",
             });
 
-        It should_have_the_post_title = () =>
-            post.Title.ShouldEqual("Hi 2 u");
+        It should_have_the_title = () =>
+            post.Title.ShouldEqual("Fires of Heaven");
+
+        It should_have_the_author = () =>
+            post.Author.ShouldEqual("Robert Jordan");
     }
 
     public class full_app_setup
@@ -36,7 +38,8 @@ namespace MaviBlog.Specs.Integration
 
             controller.Post(new PostCreateInputModel
             {
-                Title = "Hi 2 u",
+                Author = "Robert Jordan",
+                Title = "Fires of Heaven",
             });
         };
 

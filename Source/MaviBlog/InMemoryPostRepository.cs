@@ -16,6 +16,7 @@ namespace MaviBlog
             var matchingPost = _posts[(int) (id - 1)];
             return new PostViewModel
                        {
+                           Author = matchingPost.Author,
                            Title = matchingPost.Title,
                        };
         }
