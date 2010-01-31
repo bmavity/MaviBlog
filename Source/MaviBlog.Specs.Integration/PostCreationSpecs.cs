@@ -38,7 +38,11 @@ namespace MaviBlog.Specs.Integration
         {
             var container = new Container(init =>
             {
-                init.AddRegistry<CoreStructureMapRegistry>();
+                init.Scan(scan =>
+                {
+                    scan.AssemblyContainingType<CoreStructureMapRegistry>();
+                    scan.WithDefaultConventions();
+                });
 
                 init.For<IPostRepository>().Use<InMemoryPostRepository>();
                 init.For<IUrlEncodedTitleRepository>().Use<InMemoryUrlEncodedTitleRepository>();
