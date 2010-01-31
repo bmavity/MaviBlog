@@ -22,6 +22,12 @@ namespace MaviBlog.Specs.Integration
 
         It should_have_the_author = () =>
             post.Author.ShouldEqual("Robert Jordan");
+
+        It should_have_the_content = () =>
+            post.Content.ShouldEqual("<p>The Wheel of Time turns...</p>");
+
+        It should_have_the_publish_date = () =>
+            post.PublishDate.ShouldEqual("1/1/2010");
     }
 
     public class full_app_setup
@@ -39,6 +45,8 @@ namespace MaviBlog.Specs.Integration
             controller.Post(new PostCreateInputModel
             {
                 Author = "Robert Jordan",
+                Content = "<p>The Wheel of Time turns...</p>",
+                PublishDate = "1/1/2010",
                 Title = "Fires of Heaven",
             });
         };

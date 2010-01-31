@@ -17,6 +17,8 @@ namespace MaviBlog
             return new PostViewModel
                        {
                            Author = matchingPost.Author,
+                           Content = matchingPost.Content,
+                           PublishDate = matchingPost.PublishDate,
                            Title = matchingPost.Title,
                        };
         }

@@ -25,6 +25,8 @@ namespace MaviBlog.Web.Controllers.Post
             var postId = _postRepository.Save(new MaviBlog.Post
                                                   {
                                                       Author = inputModel.Author,
+                                                      Content = inputModel.Content,
+                                                      PublishDate = inputModel.PublishDate,
                                                       Title = inputModel.Title,
                                                   });
             return new PostCreateResult
