@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaviBlog.Web", "MaviBlog.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaviBlog.Specs", "MaviBlog.Specs\MaviBlog.Specs.csproj", "{29D38E59-842D-49F1-A15D-66C9BD8828F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaviBlog.Specs.Integration", "MaviBlog.Specs.Integration\MaviBlog.Specs.Integration.csproj", "{723522ED-7F33-4AEB-81FD-443E7B04319D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{29D38E59-842D-49F1-A15D-66C9BD8828F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29D38E59-842D-49F1-A15D-66C9BD8828F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29D38E59-842D-49F1-A15D-66C9BD8828F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{723522ED-7F33-4AEB-81FD-443E7B04319D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{723522ED-7F33-4AEB-81FD-443E7B04319D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{723522ED-7F33-4AEB-81FD-443E7B04319D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{723522ED-7F33-4AEB-81FD-443E7B04319D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
