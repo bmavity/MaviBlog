@@ -14,7 +14,7 @@ namespace MaviBlog.Specs.Web.Controllers
         private static PostController controller;
         private static PostViewModel viewModel;
 
-        private Establish context = () =>
+        Establish context = () =>
         {
             var mocker = new RhinoAutoMocker<PostController>();
 
