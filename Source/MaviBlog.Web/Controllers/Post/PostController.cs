@@ -4,22 +4,28 @@ namespace MaviBlog.Web.Controllers.Post
 {
     public class PostController
     {
-        private readonly IPostRepository _repository;
+        private readonly IPostRepository _postRepository;
+        private readonly IUrlEncodedTitleRepository _titleRepository;
 
-        public PostController(IPostRepository repository)
+        public PostController(IPostRepository postRepository, IUrlEncodedTitleRepository titleRepository)
         {
-            _repository = repository;
+            _postRepository = postRepository;
+            _titleRepository = titleRepository;
         }
 
         public PostViewModel Get(PostIndexInputModel inputModel)
         {
-            return _repository.GetPostByUrlEncodedTitle(inputModel.UrlFormattedPostTitle);
+            var postId = _titleRepository.GetPostIdForUrlEncodedTitle(inputModel.UrlFormattedPostTitle);
+            return _postRepository.GetPostById(postId);
         }
 
         [JsonEndpoint]
         public PostCreateResult Post(PostCreateInputModel inputModel)
         {
-            var postId = _repository.Save(new MaviBlog.Post());
+            var postId = _postRepository.Save(new MaviBlog.Post
+                                                  {
+                                                      Title = inputModel.Title,
+                                                  });
             return new PostCreateResult
             {
                 Id = postId,

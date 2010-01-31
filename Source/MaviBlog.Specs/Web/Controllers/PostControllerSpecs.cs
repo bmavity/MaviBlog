@@ -20,8 +20,14 @@ namespace MaviBlog.Specs.Web.Controllers
 
             post = new PostViewModel();
 
+            var postId = 3;
+
+            mocker.Get<IUrlEncodedTitleRepository>()
+                .Stub(x => x.GetPostIdForUrlEncodedTitle("test-post_name"))
+                .Return(postId);
+
             mocker.Get<IPostRepository>()
-                .Stub(x => x.GetPostByUrlEncodedTitle("test-post_name"))
+                .Stub(x => x.GetPostById(postId))
                 .Return(post);
 
             controller = mocker.ClassUnderTest;

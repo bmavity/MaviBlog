@@ -4,24 +4,36 @@ using System.Linq;
 
 namespace MaviBlog
 {
-    public class PostRepository : IPostRepository
+    public class InMemoryPostRepository : IPostRepository
     {
         public IEnumerable<PostViewModel> GetLatestPosts()
         {
-            return _posts;
+            return _postViews;
         }
 
-        public PostViewModel GetPostByUrlEncodedTitle(string urlEncodedPostTitle)
+        public PostViewModel GetPostById(long id)
         {
-            return _posts.ElementAt(0);
+            var matchingPost = _posts[(int) (id - 1)];
+            return new PostViewModel
+                       {
+                           Title = matchingPost.Title,
+                       };
         }
 
         public long Save(Post postToCreate)
         {
-            return 1;
+            _posts.Add(postToCreate);
+            return _posts.Count;
         }
 
-        private static IEnumerable<PostViewModel> _posts = new[]
+        public static void Reset()
+        {
+            _posts.Clear();
+        }
+
+        private static List<Post> _posts = new List<Post>();
+
+        private static IEnumerable<PostViewModel> _postViews = new[]
                        {
                            new PostViewModel
                                {

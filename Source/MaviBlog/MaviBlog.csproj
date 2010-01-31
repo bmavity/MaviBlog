@@ -45,9 +45,11 @@
   <ItemGroup>
     <Compile Include="Blog.cs" />
     <Compile Include="CoreStructureMapRegistry.cs" />
+    <Compile Include="InMemoryUrlEncodedTitleRepository.cs" />
     <Compile Include="IPostRepository.cs" />
+    <Compile Include="IUrlEncodedTitleRepository.cs" />
     <Compile Include="Post.cs" />
-    <Compile Include="PostRepository.cs" />
+    <Compile Include="InMemoryPostRepository.cs" />
     <Compile Include="PostViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

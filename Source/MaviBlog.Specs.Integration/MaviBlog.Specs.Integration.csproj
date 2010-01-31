@@ -31,6 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\Tools\MSpec\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\Tools\RhinoMocks\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\Libraries\StructureMap\StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,6 +51,16 @@
   <ItemGroup>
     <Compile Include="PostCreationSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MaviBlog.Web\MaviBlog.Web.csproj">
+      <Project>{CBB73CF6-90FC-48F3-B0CA-EBEA1AE48B8B}</Project>
+      <Name>MaviBlog.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MaviBlog\MaviBlog.csproj">
+      <Project>{3B5529E8-4600-4D4D-AAFC-63BC3AA5423F}</Project>
+      <Name>MaviBlog</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

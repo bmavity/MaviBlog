@@ -10,6 +10,9 @@ namespace MaviBlog
             {
                 scan.TheCallingAssembly();
                 scan.WithDefaultConventions();
+
+                For<IPostRepository>().Use<InMemoryPostRepository>();
+                For<IUrlEncodedTitleRepository>().Use<InMemoryUrlEncodedTitleRepository>();
             });
         }
     }
