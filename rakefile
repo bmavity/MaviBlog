@@ -22,7 +22,8 @@ namespace :build do
 	mspec do |mspec|
 		mspec.path_to_command = "Tools/MSpec/MSpec.exe"
 		mspec.assemblies(
-			"Build/MaviBlog.Specs.dll"
+			"Build/MaviBlog.Specs.dll",
+			"Build/MaviBlog.Specs.Integration.dll"
 		)
 		mspec.options(
 			"--html Build/MSpecResults.html"
