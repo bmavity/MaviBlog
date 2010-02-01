@@ -3,6 +3,7 @@ using MaviBlog.Web.Controllers.Post;
 using Rhino.Mocks;
 using StructureMap.AutoMocking;
 
+// ReSharper disable InconsistentNaming
 namespace MaviBlog.Specs.Web.Controllers
 {
     public class PostControllerSpecs{}
@@ -48,7 +49,6 @@ namespace MaviBlog.Specs.Web.Controllers
     {
         private static PostController controller;
         private static PostCreateResult result;
-        private static Post createdPost;
         private static RhinoAutoMocker<PostController> mocker;
 
         Establish context = () =>
@@ -81,3 +81,4 @@ namespace MaviBlog.Specs.Web.Controllers
                 .AssertWasCalled(x => x.SaveUrlToPostIdMap("hi-2-u", 1));
     }
 }
+// ReSharper restore InconsistentNaming
