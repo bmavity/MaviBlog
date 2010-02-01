@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using AutoMapper;
 using FubuMVC.Core;
 using FubuMVC.StructureMap.Bootstrap;
@@ -22,6 +23,22 @@ namespace MaviBlog.Web
             init.AddRegistry<CoreStructureMapRegistry>();
 
             init.AddRegistry<AutoMapperStructureMapRegistry>();
+
+            init.For<IPostRepository>()
+                .Use<FileSystemPostRepository>();
+            init.For<IUrlEncodedTitleRepository>()
+                .Use<FileSystemUrlEncodedTitleRepository>()
+                .Ctor<string>(GetUrlEncodedTitleDataFile());
+        }
+
+        private string GetUrlEncodedTitleDataFile()
+        {
+            return GetAppDataPath() + "/UrlEncodedTitleToIdMap.data";
+        }
+
+        private string GetAppDataPath()
+        {
+            return HttpContext.Current.Server.MapPath("~/App_Data");
         }
     }
 

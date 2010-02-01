@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Blog.cs" />
     <Compile Include="CoreStructureMapRegistry.cs" />
     <Compile Include="FileSystemPostRepository.cs" />
     <Compile Include="FileSystemUrlEncodedTitleRepository.cs" />

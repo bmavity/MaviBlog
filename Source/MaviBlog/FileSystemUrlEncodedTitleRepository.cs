@@ -38,7 +38,7 @@ namespace MaviBlog
             }
         }
 
-        public StreamWriter GetFileWriter()
+        private StreamWriter GetFileWriter()
         {
             if (!File.Exists(_filePath))
             {
