@@ -1,17 +1,67 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace MaviBlog
 {
     public class FileSystemUrlEncodedTitleRepository : IUrlEncodedTitleRepository
     {
+        private readonly string _filePath;
+
+        public FileSystemUrlEncodedTitleRepository(string filePath)
+        {
+            _filePath = filePath;
+        }
+
         public long GetPostIdForUrlEncodedTitle(string urlEncodedTitle)
         {
-            return 1;
+            using(var reader = new StreamReader(_filePath))
+            {
+                while(!reader.EndOfStream)
+                {
+                    var entry = reader.ReadLine().GetEntry();
+                    if(entry.EncodedUrl() == urlEncodedTitle)
+                    {
+                        return entry.Id();
+                    }
+                }
+            }
+            return -1;
         }
 
         public void SaveUrlToPostIdMap(string urlEncodedTitle, long postId)
         {
-            throw new NotImplementedException();
+            using(var writer = GetFileWriter())
+            {
+                writer.WriteLine(urlEncodedTitle + " " + postId);
+            }
+        }
+
+        public StreamWriter GetFileWriter()
+        {
+            if (!File.Exists(_filePath))
+            {
+                return new StreamWriter(File.Create(_filePath));
+            }
+            return new StreamWriter(_filePath);
+        }
+    }
+
+    public static class UrlEncodedRepositoryExtensions
+    {
+        public static string[] GetEntry(this string fileLine)
+        {
+            return fileLine.Split(' ');
+        }
+
+        public static string EncodedUrl(this string[] entry)
+        {
+            return entry[0];
+        }
+
+        public static long Id(this string[] entry)
+        {
+            return Int64.Parse(entry[1]);
         }
     }
 }
