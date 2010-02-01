@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace MaviBlog
@@ -22,6 +21,7 @@ namespace MaviBlog
                     var entry = reader.ReadLine().GetEntry();
                     if(entry.EncodedUrl() == urlEncodedTitle)
                     {
+                        reader.Close();
                         return entry.Id();
                     }
                 }
@@ -34,6 +34,7 @@ namespace MaviBlog
             using(var writer = GetFileWriter())
             {
                 writer.WriteLine(urlEncodedTitle + " " + postId);
+                writer.Close();
             }
         }
 
@@ -43,7 +44,7 @@ namespace MaviBlog
             {
                 return new StreamWriter(File.Create(_filePath));
             }
-            return new StreamWriter(_filePath);
+            return new StreamWriter(_filePath, true);
         }
     }
 
