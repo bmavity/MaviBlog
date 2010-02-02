@@ -9,5 +9,13 @@ namespace MaviBlog.Specs.Integration
         {
             File.Exists(filePath).ShouldBeTrue();
         }
+
+        public static void ShouldMatch(this PostViewModel candidate, Post actual)
+        {
+            candidate.Author.ShouldEqual(actual.Author);
+            candidate.Content.ShouldEqual(actual.Content);
+            candidate.PublishDate.ShouldEqual(actual.PublishDate);
+            candidate.Title.ShouldEqual(actual.Title);
+        }
     }
 }

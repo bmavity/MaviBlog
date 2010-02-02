@@ -7,7 +7,7 @@ namespace MaviBlog.Specs.Integration
     public class FileSystemUrlEncodedTitleRepositorySpecs {}
 
     [Subject(typeof(FileSystemUrlEncodedTitleRepository)), Tags("developer", "creating post")]
-    public class when_adding_the_first_map_entry : empty_repository
+    public class when_adding_the_first_map_entry : empty_url_encoded_title_repository
     {
         Because of = () =>
             repository.SaveUrlToPostIdMap("save-me", 1);
@@ -20,7 +20,7 @@ namespace MaviBlog.Specs.Integration
     }
 
     [Subject(typeof(FileSystemUrlEncodedTitleRepository)), Tags("developer", "creating post")]
-    public class when_adding_additional_map_entries : empty_repository
+    public class when_adding_additional_map_entries : empty_url_encoded_title_repository
     {
         Establish context = () =>
         {
@@ -37,7 +37,7 @@ namespace MaviBlog.Specs.Integration
             repository.GetPostIdForUrlEncodedTitle("second-entry").ShouldEqual(2);
     }
 
-    public class empty_repository
+    public class empty_url_encoded_title_repository
     {
         protected static FileSystemUrlEncodedTitleRepository repository;
         protected static string dataFile = "UrlToPostIdMap.data";
