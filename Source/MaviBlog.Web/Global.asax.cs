@@ -25,15 +25,21 @@ namespace MaviBlog.Web
             init.AddRegistry<AutoMapperStructureMapRegistry>();
 
             init.For<IPostRepository>()
-                .Use<FileSystemPostRepository>();
+                .Use<FileSystemPostRepository>()
+                .Ctor<string>().Is(GetPostDataFile());
             init.For<IUrlEncodedTitleRepository>()
                 .Use<FileSystemUrlEncodedTitleRepository>()
-                .Ctor<string>(GetUrlEncodedTitleDataFile());
+                .Ctor<string>().Is(GetUrlEncodedTitleDataFile());
+        }
+
+        private string GetPostDataFile()
+        {
+            return GetAppDataPath() + "\\Posts.data";
         }
 
         private string GetUrlEncodedTitleDataFile()
         {
-            return GetAppDataPath() + "/UrlEncodedTitleToIdMap.data";
+            return GetAppDataPath() + "\\UrlEncodedTitleToIdMap.data";
         }
 
         private string GetAppDataPath()

@@ -2,5 +2,23 @@
     <for each="var post in Model.Posts">
         <h2>${ post.Title }</h2>
 	    <Post />
+        <a href="post/test#disqus_thread" >Comments</a>
     </for>
 </content:content>
+
+<content:scripts>
+    <script type="text/javascript">
+    //<![CDATA[
+        (function () {
+            var links = document.getElementsByTagName('a');
+            var query = '?';
+            for (var i = 0; i < links.length; i++) {
+                if (links[i].href.indexOf('#disqus_thread') >= 0) {
+                    query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+                }
+            }
+            document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/brianmavity/get_num_replies.js' + query + '"></' + 'script>');
+        })();
+    //]]>
+    </script>
+</content:scripts>
