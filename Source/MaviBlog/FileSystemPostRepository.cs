@@ -61,7 +61,10 @@ namespace MaviBlog
         {
             if (!File.Exists(_filePath))
             {
-                using (File.Create(_filePath)) ;
+                using (var newFile = File.Create(_filePath))
+                {
+                    newFile.Close();
+                }
             }
         }
     }
