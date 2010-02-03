@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using Machine.Specifications;
 
@@ -32,17 +33,9 @@ namespace MaviBlog.Specs.Integration
     }
 
     [Subject("FileSystemPostRepository that contains posts"), Tags("developer", "creating post")]
-    public class when_saving_an_additional_post : empty_post_repository
+    public class when_saving_an_additional_post : single_item_post_repository
     {
-        private static long firstPostId;
         private static long additionalPostId;
-        private static readonly Post firstPost = new Post
-        {
-            Author = "George RR Martin",
-            Content = "<h1>I'm still not finished</h1>",
-            PublishDate = "10/15/2090",
-            Title = "A Dance With Dragons",
-        };
 
         private static readonly Post additionalPost = new Post
         {
@@ -50,11 +43,6 @@ namespace MaviBlog.Specs.Integration
             Content = "<h1>I'm still not blogging</h1>",
             PublishDate = "7/5/2010",
             Title = "*sadface*",
-        };
-
-        Establish context = () =>
-        {
-            firstPostId = repository.Save(firstPost);
         };
 
         Because of = () =>
@@ -68,6 +56,46 @@ namespace MaviBlog.Specs.Integration
 
         It should_contain_the_first_entry = () =>
             repository.GetPostById(firstPostId).ShouldMatch(firstPost);
+    }
+
+    [Subject("FileSystemPostRepository that contains posts"), Tags("developer", "creating post")]
+    public class when_getting_latest_posts : single_item_post_repository
+    {
+        private static IEnumerable<PostViewModel> posts;
+
+        private static readonly Post additionalPost = new Post
+        {
+            Author = "Brian Mavity",
+            Content = "<h1>I'm still not blogging</h1>",
+            PublishDate = "7/5/2010",
+            Title = "*sadface*",
+        };
+
+        Establish context = () =>
+            repository.Save(additionalPost);
+
+        Because of = () =>
+            posts = repository.GetLatestPosts();
+
+        It should_get_all_posts = () =>
+            posts.ShouldOnlyContain(firstPost, additionalPost);
+    }
+
+    public class single_item_post_repository : empty_post_repository
+    {
+        protected static long firstPostId;
+        protected static readonly Post firstPost = new Post
+        {
+            Author = "George RR Martin",
+            Content = "<h1>I'm still not finished</h1>",
+            PublishDate = "10/15/2090",
+            Title = "A Dance With Dragons",
+        };
+
+        Establish context = () =>
+        {
+            firstPostId = repository.Save(firstPost);
+        };
     }
 
     public class empty_post_repository
