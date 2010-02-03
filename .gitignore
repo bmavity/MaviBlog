@@ -7,3 +7,4 @@ _ReSharper.*
 *.suo
 *.cache
 Build
+App_Data
