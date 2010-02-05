@@ -1,8 +1,10 @@
 ﻿<content:content>
     <for each="var post in Model.Posts">
-        <h2>${ post.Title }</h2>
-	    <Post />
-        <a href="post/test#disqus_thread" >Comments</a>
+            <var postUrl = '"post/" + post.UrlEncodedTitle'>
+            <a href="${ postUrl }"><h2>${ post.Title }</h2></a>
+    	    <Post />
+            <a href="${ postUrl }#disqus_thread" >Comments</a>
+        </var>
     </for>
 </content:content>
 
