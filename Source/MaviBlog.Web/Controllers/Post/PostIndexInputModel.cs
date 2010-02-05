@@ -5,6 +5,6 @@ namespace MaviBlog.Web.Controllers.Post
     public class PostIndexInputModel
     {
         [RouteInput]
-        public string UrlFormattedPostTitle { get; set; }
+        public string UrlEncodedPostTitle { get; set; }
     }
 }

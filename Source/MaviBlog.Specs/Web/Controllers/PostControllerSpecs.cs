@@ -37,7 +37,7 @@ namespace MaviBlog.Specs.Web.Controllers
         Because of = () =>
             viewModel = controller.Get(new PostIndexInputModel
             {
-                UrlFormattedPostTitle = "test-post_name",
+                UrlEncodedPostTitle = "test-post_name",
             });
 
         It should_return_post = () =>

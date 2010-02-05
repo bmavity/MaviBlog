@@ -2,6 +2,7 @@
 using MaviBlog.Web.Controllers.Post;
 using StructureMap;
 
+// ReSharper disable InconsistentNaming
 namespace MaviBlog.Specs.Integration
 {
     public class PostCreationSpecs {}
@@ -14,10 +15,10 @@ namespace MaviBlog.Specs.Integration
         Because of = () =>
             post = controller.Get(new PostIndexInputModel
             {
-                UrlFormattedPostTitle = "fires-of-heaven",
+                UrlEncodedPostTitle = "fires-of-heaven",
             });
 
-        It should_have_the_title = () =>
+        It should_display_the_post = () =>
             post.Title.ShouldEqual("Fires of Heaven");
 
         It should_have_the_author = () =>
@@ -28,6 +29,9 @@ namespace MaviBlog.Specs.Integration
 
         It should_have_the_publish_date = () =>
             post.PublishDate.ShouldEqual("1/1/2010");
+
+        It should_have_the_url_encoded_title = () =>
+            post.UrlEncodedTitle.ShouldEqual("fires-of-heaven");
     }
 
     public class full_app_setup
@@ -62,3 +66,4 @@ namespace MaviBlog.Specs.Integration
             InMemoryPostRepository.Reset();
     }
 }
+// ReSharper restore InconsistentNaming

@@ -17,8 +17,10 @@ namespace MaviBlog.Web.Controllers.Post
 
         public PostViewModel Get(PostIndexInputModel inputModel)
         {
-            var postId = _titleRepository.GetPostIdForUrlEncodedTitle(inputModel.UrlFormattedPostTitle);
-            return _postRepository.GetPostById(postId);
+            var postId = _titleRepository.GetPostIdForUrlEncodedTitle(inputModel.UrlEncodedPostTitle);
+            var post = _postRepository.GetPostById(postId);
+            post.UrlEncodedTitle = inputModel.UrlEncodedPostTitle;
+            return post;
         }
 
         [JsonEndpoint]
