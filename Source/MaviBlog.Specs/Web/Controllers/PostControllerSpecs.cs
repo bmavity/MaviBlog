@@ -24,7 +24,7 @@ namespace MaviBlog.Specs.Web.Controllers
             var postId = 3;
 
             mocker.Get<IUrlEncodedTitleRepository>()
-                .Stub(x => x.GetPostIdForUrlEncodedTitle("test-post_name"))
+                .Stub(x => x.GetPostIdForUrlEncodedTitle("test-post-name"))
                 .Return(postId);
 
             mocker.Get<IPostRepository>()
@@ -37,11 +37,14 @@ namespace MaviBlog.Specs.Web.Controllers
         Because of = () =>
             viewModel = controller.Get(new PostIndexInputModel
             {
-                UrlEncodedPostTitle = "test-post_name",
+                UrlEncodedPostTitle = "test-post-name",
             });
 
         It should_return_post = () =>
             viewModel.ShouldBeTheSameAs(post);
+
+        It should_populate_the_url_encoded_title = () =>
+            viewModel.UrlEncodedTitle.ShouldEqual("test-post-name");
     }
 
     [Subject(typeof(PostController)), Tags("developer", "create post")]
