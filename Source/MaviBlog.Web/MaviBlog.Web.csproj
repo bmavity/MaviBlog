@@ -81,6 +81,7 @@
     <Compile Include="Controllers\Post\PostCreateInputModel.cs" />
     <Compile Include="Controllers\Post\PostCreateResult.cs" />
     <Compile Include="Controllers\Post\PostIndexInputModel.cs" />
+    <Compile Include="Core\AllowPostCreationValidator.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
