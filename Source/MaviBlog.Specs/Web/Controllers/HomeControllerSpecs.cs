@@ -3,6 +3,7 @@ using Machine.Specifications;
 using MaviBlog.Web.Controllers.Home;
 using StructureMap.AutoMocking;
 using Rhino.Mocks;
+using System.Linq;
 
 namespace MaviBlog.Specs.Web.Controllers
 {
@@ -19,11 +20,19 @@ namespace MaviBlog.Specs.Web.Controllers
         {
             var mocker = new RhinoAutoMocker<HomeController>();
 
-            posts = new[] { new PostViewModel(), new PostViewModel() };
+            posts = new[] { new PostViewModel { Title = "title 1" }, new PostViewModel { Title = "title 2" }, };
 
             mocker.Get<IPostRepository>()
                 .Stub(x => x.GetLatestPosts())
                 .Return(posts);
+
+            mocker.Get<ITitleUrlEncoder>()
+                .Stub(x => x.EncodeTitle("title 1"))
+                .Return("encoded title 1");
+
+            mocker.Get<ITitleUrlEncoder>()
+                .Stub(x => x.EncodeTitle("title 2"))
+                .Return("encoded title 2");
 
             controller = mocker.ClassUnderTest;
         };
@@ -33,5 +42,11 @@ namespace MaviBlog.Specs.Web.Controllers
 
         It should_include_recent_posts = () =>
             viewModel.Posts.ShouldBeTheSameAs(posts);
+
+        It should_add_encoded_title_to_all_posts = () =>
+        {
+            viewModel.Posts.ElementAt(0).UrlEncodedTitle.ShouldEqual("encoded title 1");
+            viewModel.Posts.ElementAt(1).UrlEncodedTitle.ShouldEqual("encoded title 2");
+        };
     }
 }
