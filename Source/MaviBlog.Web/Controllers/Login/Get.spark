@@ -1,0 +1,11 @@
+﻿<content:content>
+	<form action="login" method="POST">
+        <label for="UserName">User Name</label>
+        <input type="text" id="UserName" name="UserName" />
+        
+        <label for="Password">Password</label>
+        <input type="text" id="Password" name="Password" />
+        
+        <input type="submit" value="Log In" />
+    </form>
+</content:content>

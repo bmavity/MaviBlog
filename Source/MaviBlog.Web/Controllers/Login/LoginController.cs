@@ -9,6 +9,8 @@ namespace MaviBlog.Web.Controllers.Login
             _authService = authService;
         }
 
+        public void Get(DummyForFubu d) {}
+
         public void Post(LoginInputModel loginInfo)
         {
             if(_authService.AuthenticateUserNameAndPassword(loginInfo.UserName, loginInfo.Password))
@@ -16,5 +18,9 @@ namespace MaviBlog.Web.Controllers.Login
                 _authService.AddCookieForUser(loginInfo.UserName);
             }
         }
+    }
+
+    public class DummyForFubu
+    {
     }
 }
