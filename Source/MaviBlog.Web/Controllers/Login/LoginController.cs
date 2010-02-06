@@ -9,7 +9,7 @@ namespace MaviBlog.Web.Controllers.Login
             _authService = authService;
         }
 
-        public void Index(LoginInputModel loginInfo)
+        public void Post(LoginInputModel loginInfo)
         {
             if(_authService.AuthenticateUserNameAndPassword(loginInfo.UserName, loginInfo.Password))
             {

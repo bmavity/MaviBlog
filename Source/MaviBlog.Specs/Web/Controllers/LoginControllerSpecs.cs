@@ -9,7 +9,7 @@ namespace MaviBlog.Specs.Web.Controllers
     public class LoginControllerSpecs {}
 
     [Subject(typeof(LoginController))]
-    public class when_executing_index_action_with_a_valid_user_name_and_password : login_controller
+    public class when_executing_post_action_with_a_valid_user_name_and_password : login_controller
     {
         Establish context = () =>
         {
@@ -19,7 +19,7 @@ namespace MaviBlog.Specs.Web.Controllers
         };
 
         Because of = () =>
-            controller.Index(new LoginInputModel
+            controller.Post(new LoginInputModel
             {
                 Password = "password",
                 UserName = "brian",
@@ -30,7 +30,7 @@ namespace MaviBlog.Specs.Web.Controllers
     }
 
     [Subject(typeof(LoginController))]
-    public class when_executing_index_action_with_an_invalid_user_name_and_password : login_controller
+    public class when_executing_post_action_with_an_invalid_user_name_and_password : login_controller
     {
         Establish context = () =>
         {
@@ -40,7 +40,7 @@ namespace MaviBlog.Specs.Web.Controllers
         };
 
         Because of = () =>
-            controller.Index(new LoginInputModel
+            controller.Post(new LoginInputModel
             {
                 Password = "password",
                 UserName = "brian",
