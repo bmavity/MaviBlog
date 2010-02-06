@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\FormsAuthenticationServiceSpecs.cs" />
     <Compile Include="Core\TitleUrlEncoderSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web\Controllers\HomeControllerSpecs.cs" />

@@ -77,7 +77,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Home\HomeViewModel.cs" />
-    <Compile Include="Controllers\Login\IAuthenticationService.cs" />
+    <Compile Include="Core\FormsAuthenticationService.cs" />
+    <Compile Include="Core\IAuthenticationService.cs" />
     <Compile Include="Controllers\Login\LoginController.cs" />
     <Compile Include="Controllers\Login\LoginInputModel.cs" />
     <Compile Include="Controllers\Post\PostController.cs" />

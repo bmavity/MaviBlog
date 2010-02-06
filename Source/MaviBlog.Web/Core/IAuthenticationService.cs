@@ -1,4 +1,4 @@
-﻿namespace MaviBlog.Web.Controllers.Login
+﻿namespace MaviBlog.Web.Core
 {
     public interface IAuthenticationService
     {

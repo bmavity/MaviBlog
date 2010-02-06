@@ -1,5 +1,6 @@
 using Machine.Specifications;
 using MaviBlog.Web.Controllers.Login;
+using MaviBlog.Web.Core;
 using StructureMap.AutoMocking;
 using Rhino.Mocks;
 

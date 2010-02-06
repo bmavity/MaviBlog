@@ -6,6 +6,7 @@ using FubuMVC.Core;
 using FubuMVC.StructureMap.Bootstrap;
 using FubuMVC.View.Spark;
 using MaviBlog.Web.Controllers.Home;
+using MaviBlog.Web.Core;
 using StructureMap;
 using StructureMap.Configuration.DSL;
 
@@ -30,6 +31,7 @@ namespace MaviBlog.Web
             init.For<IUrlEncodedTitleRepository>()
                 .Use<FileSystemUrlEncodedTitleRepository>()
                 .Ctor<string>().Is(GetUrlEncodedTitleDataFile());
+            init.For<IAuthenticationService>().Use<FormsAuthenticationService>();
         }
 
         private string GetPostDataFile()
