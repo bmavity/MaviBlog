@@ -5,6 +5,7 @@ using StructureMap.AutoMocking;
 using Rhino.Mocks;
 using System.Linq;
 
+// ReSharper disable InconsistentNaming
 namespace MaviBlog.Specs.Web.Controllers
 {
     public class HomeControllerSpecs {}
@@ -50,3 +51,4 @@ namespace MaviBlog.Specs.Web.Controllers
         };
     }
 }
+// ReSharper restore InconsistentNaming

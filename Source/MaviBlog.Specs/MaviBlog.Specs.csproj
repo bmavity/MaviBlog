@@ -55,6 +55,7 @@
     <Compile Include="Core\TitleUrlEncoderSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web\Controllers\HomeControllerSpecs.cs" />
+    <Compile Include="Web\Controllers\LoginControllerSpecs.cs" />
     <Compile Include="Web\Controllers\PostControllerSpecs.cs" />
   </ItemGroup>
   <ItemGroup />
