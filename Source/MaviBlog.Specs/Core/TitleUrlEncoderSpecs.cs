@@ -76,6 +76,16 @@ namespace MaviBlog.Specs.Core
     }
 
     [Subject(typeof(TitleUrlEncoder))]
+    public class when_encoding_a_title_with_single_quotes : url_encoder
+    {
+        Because of = () =>
+            encodedTitle = encoder.EncodeTitle("i'mhas'ing'single'quotes");
+
+        It should_replace_all_single_quotes_with_dashes = () =>
+            encodedTitle.ShouldEqual("i-mhas-ing-single-quotes");
+    }
+
+    [Subject(typeof(TitleUrlEncoder))]
     public class when_encoding_a_title_with_multiple_dashes_next_to_each_other : url_encoder
     {
         Because of = () =>

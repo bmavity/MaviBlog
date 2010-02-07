@@ -8,6 +8,7 @@ namespace MaviBlog
         {
             var encodedTitle = postTitle
                 .Replace(" ", "-")
+                .Replace("'", "-")
                 .Replace(".", String.Empty)
                 .Replace("?", String.Empty)
                 .Replace("!", String.Empty)
