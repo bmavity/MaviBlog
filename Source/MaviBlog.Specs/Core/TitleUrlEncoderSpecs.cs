@@ -26,12 +26,22 @@ namespace MaviBlog.Specs.Core
     }
 
     [Subject(typeof(TitleUrlEncoder))]
-    public class when_encoding_a_title_with_question_mark : url_encoder
+    public class when_encoding_a_title_with_question_marks : url_encoder
     {
         Because of = () =>
             encodedTitle = encoder.EncodeTitle("howmany?canwehave?");
 
         It should_remove_all_question_marks = () =>
+            encodedTitle.ShouldEqual("howmanycanwehave");
+    }
+
+    [Subject(typeof(TitleUrlEncoder))]
+    public class when_encoding_a_title_with_exclamation_points : url_encoder
+    {
+        Because of = () =>
+            encodedTitle = encoder.EncodeTitle("howmany!canwehave!");
+
+        It should_remove_all_exclamation_points = () =>
             encodedTitle.ShouldEqual("howmanycanwehave");
     }
 
