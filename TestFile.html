@@ -1,15 +1,18 @@
 <html>
 <head>
 <title>Post me</title>
+<style>
+input { display:block; }
+</style>
 </head>
 
 <body>
 	<form action="http://localhost:21973/post" method="POST">
-	
-		<input type="text" name="Author" value="me" />
-		<input type="text" name="Content" value="<h3>First try</h3>" />
-		<input type="text" name="PublishDate" value="2/4/2010" />
-		<input type="text" name="Title" value="First Try!" />
+		
+		<input type="text" name="Author" value="Brian Mavity" />
+		<input type="text" name="Title" value="Textarea?" />
+		<textarea rows="20" cols="75" name="Content" ><p>Text area?</p></textarea>
+		<input type="text" name="PublishDate" value="2/7/2010" />
 		
 		<input type="submit" value="Save Post" />
 	</form>
