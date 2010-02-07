@@ -45,6 +45,16 @@ namespace MaviBlog.Specs.Core
             encodedTitle.ShouldEqual("howmanycanwehave");
     }
 
+    [Subject(typeof(TitleUrlEncoder))]
+    public class when_encoding_a_title_with_prenthesis : url_encoder
+    {
+        Because of = () =>
+            encodedTitle = encoder.EncodeTitle("i(can)has(parens)");
+
+        It should_remove_opening_and_closing_parenthesis = () =>
+            encodedTitle.ShouldEqual("icanhasparens");
+    }
+
     public class url_encoder
     {
         protected static TitleUrlEncoder encoder;

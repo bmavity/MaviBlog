@@ -10,6 +10,8 @@ namespace MaviBlog
                 .Replace(" ", "-")
                 .Replace("?", String.Empty)
                 .Replace("!", String.Empty)
+                .Replace("(", String.Empty)
+                .Replace(")", String.Empty)
                 .ToLower();
         }
     }
