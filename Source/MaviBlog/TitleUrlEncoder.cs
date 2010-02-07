@@ -11,6 +11,7 @@ namespace MaviBlog
                 .Replace(".", String.Empty)
                 .Replace("?", String.Empty)
                 .Replace("!", String.Empty)
+                .Replace(":", String.Empty)
                 .Replace("(", String.Empty)
                 .Replace(")", String.Empty)
                 .ToLower();

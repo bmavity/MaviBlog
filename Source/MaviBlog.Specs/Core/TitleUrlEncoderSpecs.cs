@@ -61,8 +61,18 @@ namespace MaviBlog.Specs.Core
         Because of = () =>
             encodedTitle = encoder.EncodeTitle("i(can)has(parens)");
 
-        It should_remove_opening_and_closing_parenthesis = () =>
+        It should_remove_all_opening_and_closing_parenthesis = () =>
             encodedTitle.ShouldEqual("icanhasparens");
+    }
+
+    [Subject(typeof(TitleUrlEncoder))]
+    public class when_encoding_a_title_with_colons : url_encoder
+    {
+        Because of = () =>
+            encodedTitle = encoder.EncodeTitle("i:can:hascolons:");
+
+        It should_remove_all_colons = () =>
+            encodedTitle.ShouldEqual("icanhascolons");
     }
 
     [Subject(typeof(TitleUrlEncoder))]
