@@ -8,6 +8,7 @@ namespace MaviBlog
         {
             return postTitle
                 .Replace(" ", "-")
+                .Replace(".", String.Empty)
                 .Replace("?", String.Empty)
                 .Replace("!", String.Empty)
                 .Replace("(", String.Empty)

@@ -46,6 +46,16 @@ namespace MaviBlog.Specs.Core
     }
 
     [Subject(typeof(TitleUrlEncoder))]
+    public class when_encoding_a_title_with_periods : url_encoder
+    {
+        Because of = () =>
+            encodedTitle = encoder.EncodeTitle("howmany.canwehave.");
+
+        It should_remove_all_periods = () =>
+            encodedTitle.ShouldEqual("howmanycanwehave");
+    }
+
+    [Subject(typeof(TitleUrlEncoder))]
     public class when_encoding_a_title_with_prenthesis : url_encoder
     {
         Because of = () =>
