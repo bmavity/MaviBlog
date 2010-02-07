@@ -1,3 +1,5 @@
+using System;
+
 namespace MaviBlog
 {
     public class TitleUrlEncoder : ITitleUrlEncoder
@@ -6,6 +8,7 @@ namespace MaviBlog
         {
             return postTitle
                 .Replace(" ", "-")
+                .Replace("?", String.Empty)
                 .ToLower();
         }
     }
