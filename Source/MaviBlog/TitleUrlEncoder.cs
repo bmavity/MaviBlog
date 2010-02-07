@@ -6,7 +6,7 @@ namespace MaviBlog
     {
         public string EncodeTitle(string postTitle)
         {
-            return postTitle
+            var encodedTitle = postTitle
                 .Replace(" ", "-")
                 .Replace(".", String.Empty)
                 .Replace("?", String.Empty)
@@ -14,6 +14,13 @@ namespace MaviBlog
                 .Replace("(", String.Empty)
                 .Replace(")", String.Empty)
                 .ToLower();
+
+            while(encodedTitle.Contains("--"))
+            {
+                encodedTitle = encodedTitle.Replace("--", "-");
+            }
+
+            return encodedTitle;
         }
     }
 }

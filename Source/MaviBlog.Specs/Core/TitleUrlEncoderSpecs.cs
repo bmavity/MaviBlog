@@ -65,6 +65,16 @@ namespace MaviBlog.Specs.Core
             encodedTitle.ShouldEqual("icanhasparens");
     }
 
+    [Subject(typeof(TitleUrlEncoder))]
+    public class when_encoding_a_title_with_multiple_dashes_next_to_each_other : url_encoder
+    {
+        Because of = () =>
+            encodedTitle = encoder.EncodeTitle("i--have---multiple--dashes");
+
+        It should_replace_all_multiple_dashes_with_single = () =>
+            encodedTitle.ShouldEqual("i-have-multiple-dashes");
+    }
+
     public class url_encoder
     {
         protected static TitleUrlEncoder encoder;
