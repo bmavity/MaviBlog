@@ -18,14 +18,18 @@ namespace MaviBlog.Specs.Web.Controllers
         Because of = () =>
             viewModel = controller.Index();
 
-        It should_include_recent_posts = () =>
-            viewModel.Posts.ShouldBeTheSameAs(posts);
-
         It should_add_encoded_title_to_all_posts = () =>
         {
             viewModel.Posts.ElementAt(0).UrlEncodedTitle.ShouldEqual("encoded title");
             viewModel.Posts.ElementAt(1).UrlEncodedTitle.ShouldEqual("encoded title");
             viewModel.Posts.ElementAt(2).UrlEncodedTitle.ShouldEqual("encoded title");
+        };
+
+        It should_order_the_posts_from_newest_to_oldest = () =>
+        {
+            viewModel.Posts.ElementAt(0).ShouldBeTheSameAs(thirdPublishedPost);
+            viewModel.Posts.ElementAt(1).ShouldBeTheSameAs(secondPublishedPost);
+            viewModel.Posts.ElementAt(2).ShouldBeTheSameAs(firstPublishedPost);
         };
     }
 
