@@ -1,6 +1,4 @@
 ﻿using FubuMVC.Core;
-using MaviBlog.Web.Controllers.Post;
-using StructureMap;
 
 namespace MaviBlog.Web.Controllers.Home
 {
@@ -17,23 +15,6 @@ namespace MaviBlog.Web.Controllers.Home
 
         public HomeViewModel Index()
         {
-            //var controller = ObjectFactory.GetInstance<PostController>();
-            //controller.Post(new PostCreateInputModel
-            //{
-            //    Author = "George RR Martin",
-            //    Content = "<h1>I'm still not finished</h1>",
-            //    PublishDate = "10/15/2090",
-            //    Title = "A Dance With Dragons",
-            //});
-
-            //controller.Post(new PostCreateInputModel
-            //{
-            //    Author = "Brian Mavity",
-            //    Content = "<h1>I'm still not blogging</h1>",
-            //    PublishDate = "7/5/2010",
-            //    Title = "sadface",
-            //});
-
             var posts = _repository.GetLatestPosts();
             posts.Each(x => x.UrlEncodedTitle = _urlEncoder.EncodeTitle(x.Title));
 
