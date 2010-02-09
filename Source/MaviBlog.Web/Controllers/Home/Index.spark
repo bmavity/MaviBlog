@@ -1,9 +1,11 @@
 ﻿<content:content>
     <for each="var post in Model.Posts">
-            <var postUrl = '"post/" + post.UrlEncodedTitle'>
+        <var postUrl = '"post/" + post.UrlEncodedTitle'>
             <a href="${ postUrl }"><h2>${ post.Title }</h2></a>
-    	    <Post />
-            <a href="${ postUrl }#disqus_thread" >Comments</a>
+        </var>
+    	<Post />
+        <var commentUrl = '"http://www.brianmavity.com/blog/" + post.UrlEncodedTitle + "/#disqus_thread"'>
+            <a href="${ commentUrl }">Comments</a>
         </var>
     </for>
 </content:content>
