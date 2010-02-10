@@ -1,4 +1,6 @@
-﻿<content:content>
+﻿<content:title>Learn with me - brianmavity.com</content:title>
+
+<content:content>
     <for each="var post in Model.Posts">
         <var postUrl = '"post/" + post.UrlEncodedTitle'>
             <a href="${ postUrl }"><h2>${ post.Title }</h2></a>
@@ -19,6 +21,8 @@
             for (var i = 0; i < links.length; i++) {
                 if (links[i].href.indexOf('#disqus_thread') >= 0) {
                     query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+                    links[i].href = links[i].href.replace('www.brianmavity.com/blog', 'blog.brianmavity.com/post');
+                    links[i].href = links[i].href.replace('/#', '#');
                 }
             }
             document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/brianmavity/get_num_replies.js' + query + '"></' + 'script>');
