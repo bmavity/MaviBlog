@@ -1,4 +1,6 @@
-﻿<content:content>
+﻿<content:title>${ Model.Title }</content:title>
+
+<content:content>
 	<h1>${ Model.Title }</h1>
     <var post="Model" />
     <Post />
