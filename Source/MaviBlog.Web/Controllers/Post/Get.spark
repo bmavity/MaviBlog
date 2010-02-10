@@ -2,8 +2,9 @@
 
 <content:content>
 	<h1>${ Model.Title }</h1>
-    <var post="Model" />
-    <Post />
+    <var post="Model">
+        <Post />
+    </var>
 </content:content>
 
 <content:scripts>
